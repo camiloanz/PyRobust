@@ -1,0 +1,113 @@
+\hypertarget{classrs_1_1RobustnessSurface}{}\doxysection{rs.\+Robustness\+Surface Class Reference}
+\label{classrs_1_1RobustnessSurface}\index{rs.RobustnessSurface@{rs.RobustnessSurface}}
+
+
+Inheritance diagram for rs.\+Robustness\+Surface\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classrs_1_1RobustnessSurface_a11b05435a294680055b178d0057c3047}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, graph, failing\+\_\+type, metrics, failing\+\_\+percentage\+\_\+array, num\+\_\+scenarios=None, failing\+\_\+nodes=False, failing\+\_\+edges=False, edge\+\_\+ratio=None, metric\+\_\+weights=None, graph\+\_\+weights=\char`\"{}weights\char`\"{}, graph\+\_\+capacity=\char`\"{}capacity\char`\"{}, A\+\_\+dic=None, multiple\+\_\+plots=False, reduced\+\_\+single\+\_\+plot=False, add\+\_\+line\+\_\+plot=False, save\+\_\+as\+\_\+csv=False)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrs_1_1RobustnessSurface_a5e039602a8881803f0f57454685d42d1}\label{classrs_1_1RobustnessSurface_a5e039602a8881803f0f57454685d42d1}} 
+{\bfseries igraph\+\_\+graph}
+\item 
+\mbox{\Hypertarget{classrs_1_1RobustnessSurface_a2879aa16969b9a0264dc8b0f1c54173f}\label{classrs_1_1RobustnessSurface_a2879aa16969b9a0264dc8b0f1c54173f}} 
+{\bfseries R}
+\item 
+\mbox{\Hypertarget{classrs_1_1RobustnessSurface_ad3003c92b1be8ad65d0db1a300c4f0f1}\label{classrs_1_1RobustnessSurface_ad3003c92b1be8ad65d0db1a300c4f0f1}} 
+{\bfseries active\+\_\+graph}
+\item 
+\mbox{\Hypertarget{classrs_1_1RobustnessSurface_a0eb69ef65f754d01c1acdfc9949667c8}\label{classrs_1_1RobustnessSurface_a0eb69ef65f754d01c1acdfc9949667c8}} 
+{\bfseries graph\+\_\+weights}
+\item 
+\mbox{\Hypertarget{classrs_1_1RobustnessSurface_a56c92365d6d640f08a41ca9d24189ccb}\label{classrs_1_1RobustnessSurface_a56c92365d6d640f08a41ca9d24189ccb}} 
+{\bfseries graph\+\_\+capacity}
+\item 
+\mbox{\Hypertarget{classrs_1_1RobustnessSurface_a2f522addb4e960dbfa618fdbfd627eff}\label{classrs_1_1RobustnessSurface_a2f522addb4e960dbfa618fdbfd627eff}} 
+{\bfseries A\+\_\+dic}
+\item 
+\mbox{\Hypertarget{classrs_1_1RobustnessSurface_a925b16e4bd4584a5d8e700dacd7750a1}\label{classrs_1_1RobustnessSurface_a925b16e4bd4584a5d8e700dacd7750a1}} 
+{\bfseries failing\+\_\+nodes}
+\item 
+\mbox{\Hypertarget{classrs_1_1RobustnessSurface_a30fb9978c0061ef8f4c74ec8828bee63}\label{classrs_1_1RobustnessSurface_a30fb9978c0061ef8f4c74ec8828bee63}} 
+{\bfseries failing\+\_\+edges}
+\item 
+\mbox{\Hypertarget{classrs_1_1RobustnessSurface_aedf6b6b52f81542eb19ebd31f76e6fcb}\label{classrs_1_1RobustnessSurface_aedf6b6b52f81542eb19ebd31f76e6fcb}} 
+{\bfseries failing\+\_\+type}
+\item 
+\mbox{\Hypertarget{classrs_1_1RobustnessSurface_abccd065673f8407b3a9ca2e4f0a37f2c}\label{classrs_1_1RobustnessSurface_abccd065673f8407b3a9ca2e4f0a37f2c}} 
+{\bfseries targeted\+\_\+metric}
+\item 
+\mbox{\Hypertarget{classrs_1_1RobustnessSurface_aab46c34a701661ffce607ed2d4b40824}\label{classrs_1_1RobustnessSurface_aab46c34a701661ffce607ed2d4b40824}} 
+{\bfseries targeted\+\_\+mode}
+\item 
+\mbox{\Hypertarget{classrs_1_1RobustnessSurface_aa540c135b62dedf610ef3e89ea0a9298}\label{classrs_1_1RobustnessSurface_aa540c135b62dedf610ef3e89ea0a9298}} 
+{\bfseries ratio}
+\item 
+\mbox{\Hypertarget{classrs_1_1RobustnessSurface_aa36bfaa11a915688010ab3741b96e525}\label{classrs_1_1RobustnessSurface_aa36bfaa11a915688010ab3741b96e525}} 
+{\bfseries metrics}
+\item 
+\mbox{\Hypertarget{classrs_1_1RobustnessSurface_ac3778da576aa20a895cc4d71e875c67d}\label{classrs_1_1RobustnessSurface_ac3778da576aa20a895cc4d71e875c67d}} 
+{\bfseries metric\+\_\+weights}
+\item 
+\mbox{\Hypertarget{classrs_1_1RobustnessSurface_a18aa67a28ed762797f9305bb533bd3e8}\label{classrs_1_1RobustnessSurface_a18aa67a28ed762797f9305bb533bd3e8}} 
+{\bfseries num\+\_\+scenarios}
+\item 
+\mbox{\Hypertarget{classrs_1_1RobustnessSurface_ab765df42c8b03378b1e0bccb46fe5f54}\label{classrs_1_1RobustnessSurface_ab765df42c8b03378b1e0bccb46fe5f54}} 
+{\bfseries fail\+\_\+percent}
+\item 
+\mbox{\Hypertarget{classrs_1_1RobustnessSurface_ab25be1c9e0fb1b676e4d967574d484b9}\label{classrs_1_1RobustnessSurface_ab25be1c9e0fb1b676e4d967574d484b9}} 
+{\bfseries multiple\+\_\+plots}
+\item 
+\mbox{\Hypertarget{classrs_1_1RobustnessSurface_af27bfc8ed5773ddd6f630288d3dd00bf}\label{classrs_1_1RobustnessSurface_af27bfc8ed5773ddd6f630288d3dd00bf}} 
+{\bfseries reduced\+\_\+single\+\_\+plot}
+\item 
+\mbox{\Hypertarget{classrs_1_1RobustnessSurface_a598a565e621ebe469c3debae60fec6a9}\label{classrs_1_1RobustnessSurface_a598a565e621ebe469c3debae60fec6a9}} 
+{\bfseries line\+\_\+plot}
+\item 
+\mbox{\Hypertarget{classrs_1_1RobustnessSurface_a66c2a638a54a5f96500e21c27520a23b}\label{classrs_1_1RobustnessSurface_a66c2a638a54a5f96500e21c27520a23b}} 
+{\bfseries save\+\_\+as\+\_\+csv}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrs_1_1RobustnessSurface_a11b05435a294680055b178d0057c3047}\label{classrs_1_1RobustnessSurface_a11b05435a294680055b178d0057c3047}} 
+\index{rs.RobustnessSurface@{rs.RobustnessSurface}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!rs.RobustnessSurface@{rs.RobustnessSurface}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def rs.\+Robustness\+Surface.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{graph,  }\item[{}]{failing\+\_\+type,  }\item[{}]{metrics,  }\item[{}]{failing\+\_\+percentage\+\_\+array,  }\item[{}]{num\+\_\+scenarios = {\ttfamily None},  }\item[{}]{failing\+\_\+nodes = {\ttfamily False},  }\item[{}]{failing\+\_\+edges = {\ttfamily False},  }\item[{}]{edge\+\_\+ratio = {\ttfamily None},  }\item[{}]{metric\+\_\+weights = {\ttfamily None},  }\item[{}]{graph\+\_\+weights = {\ttfamily \char`\"{}weights\char`\"{}},  }\item[{}]{graph\+\_\+capacity = {\ttfamily \char`\"{}capacity\char`\"{}},  }\item[{}]{A\+\_\+dic = {\ttfamily None},  }\item[{}]{multiple\+\_\+plots = {\ttfamily False},  }\item[{}]{reduced\+\_\+single\+\_\+plot = {\ttfamily False},  }\item[{}]{add\+\_\+line\+\_\+plot = {\ttfamily False},  }\item[{}]{save\+\_\+as\+\_\+csv = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initializes the RobustnessSurface class with the given parameters.
+
+@param graph: The input graph to be analyzed. It will be converted to an igraph.Graph.
+@param failing_type: Defines the failure strategy: either a string ("random", "epidemic") or a tuple ("targeted", metric_name, mode).
+@param metrics: List of metric names or (metric_name, mode) tuples used in robustness evaluation.
+@param failing_percentage_array: List of percentages representing how much of the graph fails in each step.
+@param num_scenarios: Number of random failure scenarios to simulate.
+@param failing_nodes: Whether to simulate node failures.
+@param failing_edges: Whether to simulate edge failures.
+@param edge_ratio: Edge-to-node failure ratio. Required if both node and edge failure are simulated.
+@param metric_weights: Optional list of weights used for combining metrics (only used if reduced_single_plot=True).
+@param graph_weights: Name of edge attribute that stores weights (e.g. "distance", "weight").
+@param graph_capacity: Name of edge attribute representing capacity (used in flow-based metrics).
+@param A_dic Optional dictionary, passed to metric functions if needed.
+@param multiple_plots: If True, generates one surface plot per metric.
+@param reduced_single_plot: If True, combines multiple metrics into a single surface using weights.
+@param add_line_plot: If True, adds a line plot summarizing the average robustness trend.
+@param save_as_csv: If True, results are saved as CSV files in the output directory.
+
+@note See the full parameter documentation in docs/start_robustness_surface.md
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classrs__random_1_1RandomFailureRobustness_a709851b83076cc42d8d1daaebb757c94}{rs\+\_\+random.\+Random\+Failure\+Robustness}}, \mbox{\hyperlink{classrs__targeted_1_1TargetedFailureRobustness_a09dbf895f42eaa6cabb2f1ac239d77ed}{rs\+\_\+targeted.\+Targeted\+Failure\+Robustness}}, and \mbox{\hyperlink{classrs__epidemic_1_1EpidemicFailureRobustness_af48ad0a825ad719bf9b271016240cbad}{rs\+\_\+epidemic.\+Epidemic\+Failure\+Robustness}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+rs\+\_\+class/rs.\+py\end{DoxyCompactItemize}

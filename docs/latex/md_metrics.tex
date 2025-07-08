@@ -1,0 +1,99 @@
+This document lists all metrics currently supported by Py\+Robust and their configurations.
+
+Some metrics return scalar values and can be used directly (e.\+g., {\ttfamily \char`\"{}connectivity\char`\"{}}), while others return node-\/ or edge-\/level values and require an evaluation {\bfseries{mode}} such as {\ttfamily \char`\"{}mean\char`\"{}}, {\ttfamily \char`\"{}max\char`\"{}}, or {\ttfamily \char`\"{}min\char`\"{}} to summarize them.
+
+\DoxyHorRuler{0}
+\hypertarget{md_metrics_autotoc_md2}{}\doxysection{Format}\label{md_metrics_autotoc_md2}
+Metrics can be specified as\+:
+
+
+\begin{DoxyItemize}
+\item A {\bfseries{string}}, for metrics that return a single value.
+\item A {\bfseries{tuple}} {\ttfamily (metric\+\_\+name, mode)}, where {\ttfamily mode} defines how to reduce node-\/ or edge-\/level values.
+\end{DoxyItemize}\hypertarget{md_metrics_autotoc_md3}{}\doxysubsection{Common types\+:}\label{md_metrics_autotoc_md3}
+
+\begin{DoxyItemize}
+\item {\ttfamily \char`\"{}mean\char`\"{}} — average value
+\item {\ttfamily \char`\"{}max\char`\"{}} — maximum value
+\item {\ttfamily \char`\"{}min\char`\"{}} — minimum value
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_metrics_autotoc_md5}{}\doxysection{Metrics Overview}\label{md_metrics_autotoc_md5}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Metric Name   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Requires Mode   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Use as Targeted Metric   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Short Description    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Metric Name   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Requires Mode   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Use as Targeted Metric   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Short Description    }\\\cline{1-4}
+\endhead
+{\ttfamily availability}   &No   &No   &Metric from optional availability module    \\\cline{1-4}
+{\ttfamily average\+\_\+path\+\_\+length}   &No   &Yes   &Average shortest path length (weighted)    \\\cline{1-4}
+{\ttfamily average\+\_\+path\+\_\+length\+\_\+in\+\_\+hops}   &No   &Yes   &Average path length in number of hops (ignores edge weights)    \\\cline{1-4}
+{\ttfamily betweenness\+\_\+centrality}   &Yes   &Yes   &Betweenness centrality of nodes    \\\cline{1-4}
+{\ttfamily closeness\+\_\+centrality}   &Yes   &Yes   &Closeness centrality of nodes    \\\cline{1-4}
+{\ttfamily connectivity}   &No   &No   &Percentage of connected node pairs    \\\cline{1-4}
+{\ttfamily diameter}   &No   &No   &Longest shortest path in the graph    \\\cline{1-4}
+{\ttfamily eccentricity}   &Yes   &Yes   &Eccentricity    \\\cline{1-4}
+{\ttfamily edge\+\_\+betweenness}   &Yes   &Yes   &Betweenness centrality of edges    \\\cline{1-4}
+{\ttfamily eigenvector\+\_\+centrality}   &Yes   &Yes   &Eigenvector centrality of nodes    \\\cline{1-4}
+{\ttfamily harmonic\+\_\+centrality}   &Yes   &Yes   &Harmonic mean of shortest path lengths per node    \\\cline{1-4}
+{\ttfamily maxflow}   &Yes   &No   &Maximum flow between node pairs    \\\cline{1-4}
+{\ttfamily nodal\+\_\+degree}   &Yes   &Yes   &Degree centrality of nodes    \\\cline{1-4}
+{\ttfamily r\+LCC}   &No   &No   &Relative size of the largest connected component    \\\cline{1-4}
+{\ttfamily strength}   &Yes   &Yes   &Strength of nodes   \\\cline{1-4}
+\end{longtabu}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md_metrics_autotoc_md7}{}\doxysection{Notes}\label{md_metrics_autotoc_md7}
+
+\begin{DoxyItemize}
+\item If a metric requires a mode, it must be passed as a tuple\+: {\ttfamily (\char`\"{}metric\+\_\+name\char`\"{}, \char`\"{}mode\char`\"{})}
+\item Modes are ignored for metrics that return a single scalar (e.\+g., {\ttfamily \char`\"{}connectivity\char`\"{}})
+\item Metrics that depend on edge attributes may require {\ttfamily graph\+\_\+weights} or {\ttfamily graph\+\_\+capacity}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_metrics_autotoc_md9}{}\doxysection{Adding Custom Metrics}\label{md_metrics_autotoc_md9}
+You can add your own metric by implementing it in the {\ttfamily rs\+\_\+metrics/} directory and registering it in {\ttfamily rs\+\_\+metric.\+py}. ~\newline
+ Custom metric functions must be compatible with the interface used by {\ttfamily compute\+\_\+metric(...)}. ~\newline
+ The function should have the following signature\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{def calculate\_my\_metric(graph, mode, type=None, **kwargs):}
+
+\end{DoxyCode}
+
+
+The function can support two modes\+:
+
+
+\begin{DoxyItemize}
+\item $\ast$$\ast${\ttfamily mode=\char`\"{}rs\+\_\+value\char`\"{}}$\ast$$\ast$ $\ast$(default mode for robustness output — required)$\ast$ ~\newline
+ Return a single scalar value representing the network\textquotesingle{}s robustness. ~\newline
+ If applicable, use the type argument to reduce node/edge-\/level values\+:
+\begin{DoxyItemize}
+\item {\ttfamily \char`\"{}mean\char`\"{}}
+\item {\ttfamily \char`\"{}max\char`\"{}}
+\item {\ttfamily \char`\"{}min\char`\"{}}
+\end{DoxyItemize}
+\item $\ast$$\ast${\ttfamily mode=\char`\"{}targeted\char`\"{}}$\ast$$\ast$ ~\newline
+ Return a ranking list from highest node/edge to target to least
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{To register the metric in `rs\_metric.py`, add it to the `metric\_func` dictionary:}
+\DoxyCodeLine{}
+\DoxyCodeLine{```python}
+\DoxyCodeLine{from rs\_metrics import my\_metric}
+\DoxyCodeLine{}
+\DoxyCodeLine{metric\_func["{}my\_metric"{}] = my\_metric.calculate\_my\_metric}
+
+\end{DoxyCode}
+ 

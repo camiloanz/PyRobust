@@ -1,0 +1,126 @@
+This document explains all accepted parameters in detail. ~\newline
+ For inline documentation and API reference, see the class-\/level docstring in {\ttfamily robustness\+\_\+surface.\+py}.
+
+\DoxyHorRuler{0}
+\hypertarget{md_parameters_autotoc_md12}{}\doxysection{$<$tt$>$graph$<$/tt$>$}\label{md_parameters_autotoc_md12}
+The input graph to be analyzed. It will be internally converted into an {\ttfamily igraph.\+Graph}.
+
+\DoxyHorRuler{0}
+\hypertarget{md_parameters_autotoc_md14}{}\doxysection{$<$tt$>$metrics$<$/tt$>$}\label{md_parameters_autotoc_md14}
+{\bfseries{Type\+:}} {\ttfamily list\mbox{[}str\mbox{]}} or {\ttfamily list\mbox{[}tuple\mbox{[}str, str\mbox{]}\mbox{]}} A list of metric names or {\ttfamily (metric\+\_\+name, mode)} tuples.
+
+If a metric returns node-\/ or edge-\/level values (e.\+g., centralities), a mode must be specified to summarize them\+:
+\begin{DoxyItemize}
+\item {\ttfamily \char`\"{}mean\char`\"{}} – mean value
+\item {\ttfamily \char`\"{}max\char`\"{}} – maximum value
+\item {\ttfamily \char`\"{}min\char`\"{}} – minimum value
+\end{DoxyItemize}
+
+See \mbox{\hyperlink{md_metrics}{metrics.md}} for a full list of supported metrics and their different configurations.
+
+\DoxyHorRuler{0}
+\hypertarget{md_parameters_autotoc_md16}{}\doxysection{$<$tt$>$metric\+\_\+weights$<$/tt$>$}\label{md_parameters_autotoc_md16}
+{\bfseries{Type\+:}} {\ttfamily list\mbox{[}float\mbox{]}} ~\newline
+ {\bfseries{Required if\+:}} {\ttfamily reduced\+\_\+single\+\_\+plot=True} ~\newline
+ A list of weights assigned to each selected metric when generating a combined robustness surface. ~\newline
+
+
+Weights reflect the relative importance or scale of each metric. ~\newline
+ They do {\bfseries{not}} have to be normalized (i.\+e., they don\textquotesingle{}t need to sum to 1.\+0), but they will be used proportionally.
+
+\DoxyHorRuler{0}
+\hypertarget{md_parameters_autotoc_md18}{}\doxysection{$<$tt$>$failing\+\_\+nodes$<$/tt$>$}\label{md_parameters_autotoc_md18}
+{\bfseries{Type\+:}} {\ttfamily bool} ~\newline
+ If {\ttfamily True}, node failures are simulated.
+
+\DoxyHorRuler{0}
+\hypertarget{md_parameters_autotoc_md20}{}\doxysection{$<$tt$>$failing\+\_\+edges$<$/tt$>$}\label{md_parameters_autotoc_md20}
+{\bfseries{Type\+:}} {\ttfamily bool} ~\newline
+ If {\ttfamily True}, edge failures are simulated.
+
+\DoxyHorRuler{0}
+\hypertarget{md_parameters_autotoc_md22}{}\doxysection{$<$tt$>$failing\+\_\+type$<$/tt$>$}\label{md_parameters_autotoc_md22}
+{\bfseries{Type\+:}} {\ttfamily str} or {\ttfamily tuple} ~\newline
+ Defines the failure strategy applied during simulation. Possible values\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily \char`\"{}random\char`\"{}} ~\newline
+ Simulates random failure of nodes and/or edges.
+\item {\ttfamily (\char`\"{}targeted\char`\"{}, metric\+\_\+name, mode)} ~\newline
+ Applies targeted failure based on a centrality or ranking metric. ~\newline
+ The {\ttfamily mode} defines how often the ranking is updated\+:
+\begin{DoxyItemize}
+\item {\ttfamily \char`\"{}static\char`\"{}} – ranking is computed once before the simulation
+\item {\ttfamily \char`\"{}dynamic\char`\"{}} – ranking is re-\/evaluated after each failure step
+\end{DoxyItemize}
+
+See \mbox{\hyperlink{md_metrics}{metrics.md}} for a list of available metrics and which are compatible with targeted failure strategies.
+\item {\ttfamily \char`\"{}epidemic\char`\"{}} ~\newline
+ Simulates failure spreading from a randomly selected node to its neighbors.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_parameters_autotoc_md24}{}\doxysection{$<$tt$>$edge\+\_\+ratio$<$/tt$>$}\label{md_parameters_autotoc_md24}
+{\bfseries{Type\+:}} {\ttfamily float} ~\newline
+ Number of edge failures per failed node. ~\newline
+ Required only if both {\ttfamily failing\+\_\+nodes=True} and {\ttfamily failing\+\_\+edges=True}.
+
+\DoxyHorRuler{0}
+\hypertarget{md_parameters_autotoc_md26}{}\doxysection{$<$tt$>$failing\+\_\+percentage\+\_\+array$<$/tt$>$}\label{md_parameters_autotoc_md26}
+{\bfseries{Type\+:}} {\ttfamily list\mbox{[}int\mbox{]}} ~\newline
+ A list of failure percentages to simulate.
+
+Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{[i * 5 for i in range(1, 15)]  \# [5, 10, ..., 70]}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md_parameters_autotoc_md28}{}\doxysection{$<$tt$>$multiple\+\_\+plots$<$/tt$>$}\label{md_parameters_autotoc_md28}
+{\bfseries{Type\+:}} {\ttfamily bool} ~\newline
+ If {\ttfamily True}, generates one robustness surface plot for each metric.
+
+\DoxyHorRuler{0}
+\hypertarget{md_parameters_autotoc_md30}{}\doxysection{$<$tt$>$reduced\+\_\+single\+\_\+plot$<$/tt$>$}\label{md_parameters_autotoc_md30}
+{\bfseries{Type\+:}} {\ttfamily bool} ~\newline
+ If {\ttfamily True}, generates a single robustness surface by combining all metrics using the provided {\ttfamily metric\+\_\+weights}.
+
+\DoxyHorRuler{0}
+\hypertarget{md_parameters_autotoc_md32}{}\doxysection{$<$tt$>$add\+\_\+line\+\_\+plot$<$/tt$>$}\label{md_parameters_autotoc_md32}
+{\bfseries{Type\+:}} {\ttfamily bool} ~\newline
+ If {\ttfamily True}, generates an additional line plot that summarizes the robustness surface as an average trend over all failure scenarios. ~\newline
+ Each point shows the mean metric value at a given failure percentage, with error bars representing the standard deviation. ~\newline
+ This plot is added alongside the surface(s) generated via {\ttfamily multiple\+\_\+plots} or {\ttfamily reduced\+\_\+single\+\_\+plot}.
+
+\DoxyHorRuler{0}
+\hypertarget{md_parameters_autotoc_md34}{}\doxysection{$<$tt$>$save\+\_\+as\+\_\+csv$<$/tt$>$}\label{md_parameters_autotoc_md34}
+{\bfseries{Type\+:}} {\ttfamily bool} ~\newline
+ If {\ttfamily True}, exports all results as CSV files in the {\ttfamily rs\+\_\+output/failing\+\_\+type} directory.
+
+\DoxyHorRuler{0}
+\hypertarget{md_parameters_autotoc_md36}{}\doxysection{$<$tt$>$num\+\_\+scenarios$<$/tt$>$}\label{md_parameters_autotoc_md36}
+{\bfseries{Type\+:}} {\ttfamily int} ~\newline
+ Number of randomized failure scenarios to simulate
+
+\DoxyHorRuler{0}
+\hypertarget{md_parameters_autotoc_md38}{}\doxysection{$<$tt$>$graph\+\_\+weights$<$/tt$>$}\label{md_parameters_autotoc_md38}
+{\bfseries{Type\+:}} {\ttfamily str} ~\newline
+ Optional. Name of the edge attribute in the input graph that stores weights or distances. ~\newline
+ This is used by metrics that depend on edge length such as {\ttfamily average\+\_\+path\+\_\+length}.
+
+Make sure this name matches the attribute used in your graph (e.\+g., {\ttfamily \char`\"{}weight\char`\"{}}, {\ttfamily \char`\"{}length\char`\"{}}, {\ttfamily \char`\"{}distance\char`\"{}}).
+
+Default (if present)\+: {\ttfamily \char`\"{}distance\char`\"{}}
+
+\DoxyHorRuler{0}
+\hypertarget{md_parameters_autotoc_md40}{}\doxysection{$<$tt$>$graph\+\_\+capacity$<$/tt$>$}\label{md_parameters_autotoc_md40}
+{\bfseries{Type\+:}} {\ttfamily str} ~\newline
+ Optional. Name of the edge attribute in the input graph that defines capacity values. ~\newline
+ Used by metrics such as {\ttfamily maxflow}.
+
+Make sure this matches the attribute name used in your graph (e.\+g., {\ttfamily \char`\"{}capacity\char`\"{}}, {\ttfamily \char`\"{}bandwidth\char`\"{}}, {\ttfamily \char`\"{}capacity\+\_\+mbps\char`\"{}}).
+
+Default (if present)\+: {\ttfamily \char`\"{}capacity\char`\"{}} 

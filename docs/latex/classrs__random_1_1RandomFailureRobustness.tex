@@ -1,0 +1,72 @@
+\hypertarget{classrs__random_1_1RandomFailureRobustness}{}\doxysection{rs\+\_\+random.\+Random\+Failure\+Robustness Class Reference}
+\label{classrs__random_1_1RandomFailureRobustness}\index{rs\_random.RandomFailureRobustness@{rs\_random.RandomFailureRobustness}}
+
+
+Inheritance diagram for rs\+\_\+random.\+Random\+Failure\+Robustness\+:
+% FIG 0
+
+
+Collaboration diagram for rs\+\_\+random.\+Random\+Failure\+Robustness\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classrs__random_1_1RandomFailureRobustness_a709851b83076cc42d8d1daaebb757c94}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, graph, failing\+\_\+type, metrics, failing\+\_\+percentage\+\_\+array=\mbox{[}i $\ast$5 for i in range(1, 15)\mbox{]}, num\+\_\+scenarios=15, failing\+\_\+nodes=False, failing\+\_\+edges=False, edge\+\_\+ratio=None, metric\+\_\+weights=None, graph\+\_\+weights=\char`\"{}distance\char`\"{}, graph\+\_\+capacity=\char`\"{}capacity\char`\"{}, A\+\_\+dic=None, multiple\+\_\+plots=False, reduced\+\_\+single\+\_\+plot=False, add\+\_\+line\+\_\+plot=False, save\+\_\+as\+\_\+csv=False)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrs__random_1_1RandomFailureRobustness_aec25945fc6171446ddebd219662a4416}\label{classrs__random_1_1RandomFailureRobustness_aec25945fc6171446ddebd219662a4416}} 
+{\bfseries fail\+\_\+scenarios}
+\item 
+\mbox{\Hypertarget{classrs__random_1_1RandomFailureRobustness_a4864aa115bd0282d751c456c6ae5a6cd}\label{classrs__random_1_1RandomFailureRobustness_a4864aa115bd0282d751c456c6ae5a6cd}} 
+{\bfseries metric\+\_\+matrices}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}@brief Specialized subclass for analyzing robustness under random failure scenarios.
+
+This class handles robustness evaluation for randomly failing nodes, edges,
+or a combination of both. It extends the base RobustnessSurface class
+and applies appropriate scenario generation and failure handling.
+
+@note This class is used when @c failing_type is set to "random".
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrs__random_1_1RandomFailureRobustness_a709851b83076cc42d8d1daaebb757c94}\label{classrs__random_1_1RandomFailureRobustness_a709851b83076cc42d8d1daaebb757c94}} 
+\index{rs\_random.RandomFailureRobustness@{rs\_random.RandomFailureRobustness}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!rs\_random.RandomFailureRobustness@{rs\_random.RandomFailureRobustness}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def rs\+\_\+random.\+Random\+Failure\+Robustness.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{graph,  }\item[{}]{failing\+\_\+type,  }\item[{}]{metrics,  }\item[{}]{failing\+\_\+percentage\+\_\+array = {\ttfamily \mbox{[}i~$\ast$~5~for~i~in~range(1,~15)\mbox{]}},  }\item[{}]{num\+\_\+scenarios = {\ttfamily 15},  }\item[{}]{failing\+\_\+nodes = {\ttfamily False},  }\item[{}]{failing\+\_\+edges = {\ttfamily False},  }\item[{}]{edge\+\_\+ratio = {\ttfamily None},  }\item[{}]{metric\+\_\+weights = {\ttfamily None},  }\item[{}]{graph\+\_\+weights = {\ttfamily \char`\"{}distance\char`\"{}},  }\item[{}]{graph\+\_\+capacity = {\ttfamily \char`\"{}capacity\char`\"{}},  }\item[{}]{A\+\_\+dic = {\ttfamily None},  }\item[{}]{multiple\+\_\+plots = {\ttfamily False},  }\item[{}]{reduced\+\_\+single\+\_\+plot = {\ttfamily False},  }\item[{}]{add\+\_\+line\+\_\+plot = {\ttfamily False},  }\item[{}]{save\+\_\+as\+\_\+csv = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Constructor for the RandomFailureRobustness class.
+
+@param graph The input graph to analyze.
+@param failing_type Must be "random" for this subclass to be used.
+@param metrics A list of metric names or (metric_name, mode) tuples to evaluate robustness.
+@param failing_percentage_array A list of failure percentages for each evaluation step.
+@param num_scenarios Number of random failure scenarios to simulate.
+@param failing_nodes If True, simulate random node failures.
+@param failing_edges If True, simulate random edge failures.
+@param edge_ratio Ratio of edge to node failures (required if both types are simulated).
+@param metric_weights Optional list of weights for combining metrics.
+@param graph_weights Name of the edge attribute representing weights (e.g., "distance").
+@param graph_capacity Name of the edge attribute representing capacity.
+@param A_dic Optional dictionary, passed to metric functions if needed.
+@param multiple_plots If True, generate a separate surface plot for each metric.
+@param reduced_single_plot If True, combine metrics into a single surface plot using weights.
+@param add_line_plot If True, add a line plot summarizing the average trend.
+@param save_as_csv If True, save the robustness results as CSV files.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classrs_1_1RobustnessSurface_a11b05435a294680055b178d0057c3047}{rs.\+Robustness\+Surface}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+rs\+\_\+class/rs\+\_\+random.\+py\end{DoxyCompactItemize}

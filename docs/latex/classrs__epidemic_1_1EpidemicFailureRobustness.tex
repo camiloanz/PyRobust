@@ -1,0 +1,71 @@
+\hypertarget{classrs__epidemic_1_1EpidemicFailureRobustness}{}\doxysection{rs\+\_\+epidemic.\+Epidemic\+Failure\+Robustness Class Reference}
+\label{classrs__epidemic_1_1EpidemicFailureRobustness}\index{rs\_epidemic.EpidemicFailureRobustness@{rs\_epidemic.EpidemicFailureRobustness}}
+
+
+Inheritance diagram for rs\+\_\+epidemic.\+Epidemic\+Failure\+Robustness\+:
+% FIG 0
+
+
+Collaboration diagram for rs\+\_\+epidemic.\+Epidemic\+Failure\+Robustness\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classrs__epidemic_1_1EpidemicFailureRobustness_af48ad0a825ad719bf9b271016240cbad}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, graph, failing\+\_\+type, metrics, failing\+\_\+percentage\+\_\+array, num\+\_\+scenarios=None, failing\+\_\+nodes=False, failing\+\_\+edges=False, edge\+\_\+ratio=None, metric\+\_\+weights=None, graph\+\_\+weights=\char`\"{}distance\char`\"{}, graph\+\_\+capacity=\char`\"{}capacity\char`\"{}, A\+\_\+dic=None, multiple\+\_\+plots=False, reduced\+\_\+single\+\_\+plot=False, add\+\_\+line\+\_\+plot=False, save\+\_\+as\+\_\+csv=False)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrs__epidemic_1_1EpidemicFailureRobustness_a4c4375412013d9ac6f112e909dec80e6}\label{classrs__epidemic_1_1EpidemicFailureRobustness_a4c4375412013d9ac6f112e909dec80e6}} 
+{\bfseries fail\+\_\+scenarios}
+\item 
+\mbox{\Hypertarget{classrs__epidemic_1_1EpidemicFailureRobustness_aa6b3941c601898f6ff2b230c6a183d93}\label{classrs__epidemic_1_1EpidemicFailureRobustness_aa6b3941c601898f6ff2b230c6a183d93}} 
+{\bfseries metric\+\_\+matrices}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}@brief Subclass for evaluating robustness under epidemic-like node failure scenarios.
+
+This class implements epidemic spreading failures, where nodes fail progressively
+based on some diffusion-like process. Only node failures are supported in this model.
+
+@note This class is used when @c failing_type is set to "epidemic".
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrs__epidemic_1_1EpidemicFailureRobustness_af48ad0a825ad719bf9b271016240cbad}\label{classrs__epidemic_1_1EpidemicFailureRobustness_af48ad0a825ad719bf9b271016240cbad}} 
+\index{rs\_epidemic.EpidemicFailureRobustness@{rs\_epidemic.EpidemicFailureRobustness}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!rs\_epidemic.EpidemicFailureRobustness@{rs\_epidemic.EpidemicFailureRobustness}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def rs\+\_\+epidemic.\+Epidemic\+Failure\+Robustness.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{graph,  }\item[{}]{failing\+\_\+type,  }\item[{}]{metrics,  }\item[{}]{failing\+\_\+percentage\+\_\+array,  }\item[{}]{num\+\_\+scenarios = {\ttfamily None},  }\item[{}]{failing\+\_\+nodes = {\ttfamily False},  }\item[{}]{failing\+\_\+edges = {\ttfamily False},  }\item[{}]{edge\+\_\+ratio = {\ttfamily None},  }\item[{}]{metric\+\_\+weights = {\ttfamily None},  }\item[{}]{graph\+\_\+weights = {\ttfamily \char`\"{}distance\char`\"{}},  }\item[{}]{graph\+\_\+capacity = {\ttfamily \char`\"{}capacity\char`\"{}},  }\item[{}]{A\+\_\+dic = {\ttfamily None},  }\item[{}]{multiple\+\_\+plots = {\ttfamily False},  }\item[{}]{reduced\+\_\+single\+\_\+plot = {\ttfamily False},  }\item[{}]{add\+\_\+line\+\_\+plot = {\ttfamily False},  }\item[{}]{save\+\_\+as\+\_\+csv = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Constructor for EpidemicFailureRobustness.
+
+@param graph The input graph to analyze.
+@param failing_type Must be "epidemic" for this subclass to be used.
+@param metrics A list of metric names or (metric_name, mode) tuples to evaluate robustness.
+@param failing_percentage_array A list of failure percentages for each evaluation step.
+@param num_scenarios Number of epidemic failure scenarios to simulate.
+@param failing_nodes Should be True; epidemic failures apply to nodes.
+@param failing_edges Ignored in this class; only node failures are used.
+@param edge_ratio Not used here.
+@param metric_weights Optional list of weights for combining metrics.
+@param graph_weights Name of the edge attribute representing weights (e.g., "distance").
+@param graph_capacity Name of the edge attribute representing capacity.
+@param A_dic Optional dictionary, passed to metric functions if needed.
+@param multiple_plots If True, generate a separate surface plot for each metric.
+@param reduced_single_plot If True, combine metrics into a single surface plot using weights.
+@param add_line_plot If True, add a line plot summarizing the average trend.
+@param save_as_csv If True, save the robustness results as CSV files.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classrs_1_1RobustnessSurface_a11b05435a294680055b178d0057c3047}{rs.\+Robustness\+Surface}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+rs\+\_\+class/rs\+\_\+epidemic.\+py\end{DoxyCompactItemize}

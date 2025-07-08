@@ -1,0 +1,32 @@
+An open-\/source Python tool for RBD evaluation based on the \href{https://github.com/shakthij98/PyRBD}{\texttt{ Py\+RBD}}, which is suitable for complex systems and networks with bidirectional links between components and cyclic loops. Py\+RBD++ addresses the efficiency limitations of Py\+RBD by combining boolean techniques with Minimal Cut Set (MCS) methods. The boolean algorithms are implemented in C++ and integrated with Python, significantly improving computational performance.\hypertarget{md_rs_metrics_availability_evaluation_README_autotoc_md54}{}\doxysection{Installation}\label{md_rs_metrics_availability_evaluation_README_autotoc_md54}
+Clone the source code
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git clone}
+
+\end{DoxyCode}
+
+
+Install the python libraries\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{pip install -\/r requirements.txt}
+
+\end{DoxyCode}
+
+
+Build the programm
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mkdir build \# if not exist}
+\DoxyCodeLine{cd build}
+\DoxyCodeLine{cmake ..}
+\DoxyCodeLine{make}
+\DoxyCodeLine{cd ..}
+
+\end{DoxyCode}
+\hypertarget{md_rs_metrics_availability_evaluation_README_autotoc_md55}{}\doxysection{Usage}\label{md_rs_metrics_availability_evaluation_README_autotoc_md55}
+We provide a example using single-\/core, multithreading, multiprocessing implementation to evaluate the availability of the topology Germany\+\_\+17. See the \href{example.py}{\texttt{ example.\+py}} 

@@ -1,0 +1,59 @@
+An open-\/source Python tool for evaluating network robustness using {\bfseries{robustness surface analysis}}.
+
+Py\+Robust enables simulation of progressive node and edge failures to analyze how complex networks degrade under stress. The tool supports {\bfseries{random}}, {\bfseries{targeted}}, and {\bfseries{epidemic}} failure models and generates robustness surfaces that visualize how a network\textquotesingle{}s structural properties change under failure scenarios.
+
+The main codebase is written entirely in Python. ~\newline
+ Py\+Robust uses {\ttfamily igraph} as a high-\/performance backend for graph operations, while remaining fully compatible with {\bfseries{NetworkX}} for input and integration.
+
+Users can add or modify metrics and failure models, as well as export results as CSV files or visual plots.
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md43}{}\doxysection{Installation}\label{md_README_autotoc_md43}
+Clone the repository and install the required dependencies\+:\hypertarget{md_README_autotoc_md44}{}\doxysection{@code\{bash\}}\label{md_README_autotoc_md44}
+git clone $<$repository-\/url$>$ cd Py\+Robust pip install -\/r requirements.\+txt \hypertarget{md_README_autotoc_md45}{}\doxysubsection{Optional\+: Availability Metric}\label{md_README_autotoc_md45}
+To use the additional {\ttfamily availability\+\_\+evaluation} metric\+:
+
+
+\begin{DoxyEnumerate}
+\item Navigate to the following directory\+:
+
+\`{}\`{}\`{}bash cd rs\+\_\+metrics/availability\+\_\+evaluation \`{}\`{}\`{}
+\item Follow the setup instructions provided in its {\ttfamily README.\+md}.
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md47}{}\doxysection{Generating a Robustness Surface}\label{md_README_autotoc_md47}
+To run an analysis, use the function {\ttfamily start\+\_\+robustness\+\_\+surface} from the file {\ttfamily robustness\+\_\+surface.\+py}.
+
+Example usage configurations are provided in the file {\ttfamily rs\+\_\+example.\+py}. The included example uses the {\ttfamily Nobel Germany 17} topology stored in\+: {\ttfamily topologies/nobel\+\_\+germany.\+xml}
+
+The general workflow is\+:
+
+
+\begin{DoxyEnumerate}
+\item Load a network graph
+\item Define failure settings and metrics
+\item Call {\ttfamily start\+\_\+robustness\+\_\+surface(...)}
+\item Analyze or visualize the generated output
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md49}{}\doxysection{Documentation}\label{md_README_autotoc_md49}
+
+\begin{DoxyItemize}
+\item {\bfseries{Parameter definitions}}\+: \mbox{\hyperlink{md_parameters}{parameters.md}}
+\item {\bfseries{Supported metrics}}\+: \mbox{\hyperlink{md_metrics}{metrics.md}}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md51}{}\doxysection{Extending Metrics}\label{md_README_autotoc_md51}
+To add metrics\+:
+
+
+\begin{DoxyEnumerate}
+\item Implement the logic in the {\ttfamily rs\+\_\+metrics/} directory.
+\item Register the metric in {\ttfamily rs\+\_\+metric.\+py}.
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+ 
